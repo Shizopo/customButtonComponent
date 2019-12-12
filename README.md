@@ -1,68 +1,59 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Button Component
 
-## Available Scripts
+A simple button component that can be integrated into existing project.
 
-In the project directory, you can run:
+## Usage
 
-### `yarn start`
+### To install the component
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Import `src/components/CustomButton/CustomButton.js` in your project so it will be accessible as a component.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+### Within your page
 
-### `yarn test`
+1. Add `<CustomButton />` to your `render()` function.
+2. Specify props (see details below)
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```
+<CustomButton
+    buttonValue="Button"
+    buttonSize="M"
+    buttonRole="primary"
+    buttonState="hover"
+    nonStyled={false}
+    isCustom={false}
+    customStyle={customStyle}
+    iconUrl="http://some.long/path/to/your-favourite/icon.png"
+/>
+```
 
-### `yarn build`
+### Props
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+`buttonValue` - the initial value of the button.
+Accepted data type - _string_.
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+`buttonSize` - button size. There are three options: **S**, **M**, **L**. Will be set to **M** if not specified.
+Accepted data type - _string_.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+`buttonRole` - button role in the document. There are five options: **primary**, **secondary**, **success**, **warning**, **error**. Will be set to **primary** if not specified.
+Accepted data type - _string_.
 
-### `yarn eject`
+`buttonState` - forced state setting for the button. There are four options: **hover**, **active**, **disabled**, **loading**.
+Accepted data type - _string_.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+`nonStyled` - if set to **true** button will be rendered as text-only.
+Accepted data type - _boolean_.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+`isCustom` - if set to **true** button will accept style from `customStyle` prop.
+Accepted data type - _boolean_.
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+`customStyle` - object with style properties for the button. Only applicable if `isCustom` is set to **true**.
+Accepted data type - _object_.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+`iconUrl` - link to the icon that will be added to the button body. Only applicable if `isCustom` is set to **true**.
+Accepted data type - _string_.
 
-## Learn More
+## Made with
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+- React
+- Sass
+- Flow
