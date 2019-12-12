@@ -1,0 +1,217 @@
+$text-color-main: #fff
+$text-color-secondary: #061b36
+$text-color-disabled: #00000085
+$bg-color-primary: #338bff
+$bg-color-secondary: #8cbffa
+$bg-color-success: #00b300
+$bg-color-warning: #facc00
+$bg-color-error: #ff0800
+$bg-color-disabled: #efefef
+
+%button-initial
+    display: flex
+    flex-flow: row nowrap
+    justify-content: center
+    align-items: center
+    margin: 0
+    min-width: 1em
+    max-width: fit-content
+    cursor: pointer
+    border-radius: .25em
+    line-height: 1em
+    word-break: keep-all
+
+%small
+    padding: .25em 1em
+
+%medium
+    padding: .5em 1em
+
+%large
+    padding: .75em 1em
+
+%primary
+    background-color: $bg-color-primary
+    color: $text-color-main
+
+%secondary
+    background-color: $bg-color-secondary
+    color: $text-color-secondary
+
+%success
+    background-color: $bg-color-success
+    color: $text-color-main
+
+%warning
+    background-color: $bg-color-warning
+    color: $text-color-main
+
+%error
+    background-color: $bg-color-error
+    color: $text-color-main
+
+*
+    font-size: 16px
+
+.container
+    display: flex
+    margin: 1em
+    padding: .5em
+    justify-content: center
+    align-items: center
+
+.button
+    @extend %button-initial
+    font-weight: 600
+    opacity: .7
+    box-shadow: 0 2px 3px rgba(0,0,0,0.19), 0 2px 3px rgba(0,0,0,0.23)
+    transition: box-shadow 250ms
+
+    &:active
+        @extend .is-active
+
+    &:hover
+        @extend .is-hover
+
+    &--small
+        @extend .button
+        @extend %small
+
+        &--primary
+            @extend .button--small
+            @extend %primary
+
+        &--secondary
+            @extend .button--small
+            @extend %secondary
+
+        &--success
+            @extend .button--small
+            @extend %success
+
+        &--warning
+            @extend .button--small
+            @extend %warning
+
+        &--error
+            @extend .button--small
+            @extend %error
+
+    &--medium
+        @extend .button
+        @extend %medium
+
+        &--primary
+            @extend .button--medium
+            @extend %primary
+
+        &--secondary
+            @extend .button--medium
+            @extend %secondary
+
+        &--success
+            @extend .button--medium
+            @extend %success
+
+        &--warning
+            @extend .button--medium
+            @extend %warning
+
+        &--error
+            @extend .button--medium
+            @extend %error
+
+    &--large
+        @extend .button
+        @extend %large
+
+        &--primary
+            @extend .button--large
+            @extend %primary
+
+        &--secondary
+            @extend .button--large
+            @extend %secondary
+
+        &--success
+            @extend .button--large
+            @extend %success
+
+        &--warning
+            @extend .button--large
+            @extend %warning
+
+        &--error
+            @extend .button--large
+            @extend %error
+
+// Button states
+.is-hover
+    opacity: .9
+    box-shadow: 0 4px 7px rgba(0,0,0,0.19), 0 4px 7px rgba(0,0,0,0.23)
+
+.is-active
+    opacity: 1
+    box-shadow: 0 3px 5px rgba(0,0,0,0.16), 0 3px 5px rgba(0,0,0,0.23)
+
+.is-loading
+    pointer-events: none
+    background-color: $bg-color-disabled
+    opacity: 1
+    color: $text-color-disabled
+
+    .button__icon
+        display: inline-block
+        width: 1em
+        height: 1em
+
+    .button__icon:after
+        content: " "
+        display: block
+        width: .5em
+        height: .5em
+        margin: 0
+        opacity: .5
+        border-radius: 50%
+        border: .25em solid #fff
+        border-color: #000000 transparent #000000 transparent
+        animation: button__icon 2s linear infinite
+
+    @keyframes button__icon
+        0%
+            transform: rotate(0deg)
+
+        100%
+            transform: rotate(360deg)
+
+.is-disabled
+    pointer-events: none
+    background-color: $bg-color-disabled
+    opacity: 1
+    color: $text-color-disabled
+    box-shadow: none
+
+// Button without style
+.button--non-styled
+    @extend .button
+    @extend %medium
+    box-shadow: none
+    transition: none
+    &:hover
+        background-color: transparent
+        box-shadow: none
+    &:active
+        background-color: transparent
+        box-shadow: none
+
+.button--custom
+    @extend %button-initial
+
+.button__icon
+    .button__icon__img
+        padding: 0 .15em
+        max-height: 1em
+
+.button__text
+    margin: 0
+    user-select: none
