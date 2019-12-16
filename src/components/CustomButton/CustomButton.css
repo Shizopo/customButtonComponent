@@ -1,0 +1,59 @@
+* {
+  font-size: 16px;
+}
+
+.container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 1em;
+  padding: .5em;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.button, .button--primary {
+  margin: 0;
+  min-width: 1em;
+  cursor: pointer;
+  border-radius: .25em;
+  word-break: keep-all;
+  line-height: 1em;
+  padding: .5em 1em;
+  -webkit-box-shadow: 0 2px 3px rgba(0, 0, 0, 0.19), 0 2px 3px rgba(0, 0, 0, 0.23);
+          box-shadow: 0 2px 3px rgba(0, 0, 0, 0.19), 0 2px 3px rgba(0, 0, 0, 0.23);
+  -webkit-transition: -webkit-box-shadow 250ms;
+  transition: -webkit-box-shadow 250ms;
+  transition: box-shadow 250ms;
+  transition: box-shadow 250ms, -webkit-box-shadow 250ms;
+}
+
+.button:hover, .button--primary:hover {
+  background-color: #0f4c81;
+  -webkit-box-shadow: 0 4px 7px rgba(0, 0, 0, 0.19), 0 4px 7px rgba(0, 0, 0, 0.23);
+          box-shadow: 0 4px 7px rgba(0, 0, 0, 0.19), 0 4px 7px rgba(0, 0, 0, 0.23);
+}
+
+.button:active, .button--primary:active {
+  background-color: #0e4270;
+  -webkit-box-shadow: 0 3px 5px rgba(0, 0, 0, 0.16), 0 3px 5px rgba(0, 0, 0, 0.23);
+          box-shadow: 0 3px 5px rgba(0, 0, 0, 0.16), 0 3px 5px rgba(0, 0, 0, 0.23);
+}
+
+.button--primary {
+  background-color: #145e9e;
+  color: #fff;
+}
+
+.button__text {
+  margin: 0;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+/*# sourceMappingURL=CustomButton.css.map */
